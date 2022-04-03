@@ -22,10 +22,7 @@ fn main() {
     println!("The result is {}", result);
 
 
-    const CNT: usize = 5;
-    let letters: [char; CNT] = ['ه', 'ل', 'ا', 'ا', '!'];
-    for character in (1..CNT).rev() {
-        print!("{} ", letters[character]); // Doesn't work, variable size chars
-        
+    for character in "اهلا وسهلا!".chars() {
+        print!("{} ", character); // Doesn't work, variable size chars        
     }
 }
