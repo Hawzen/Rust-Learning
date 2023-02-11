@@ -27,6 +27,7 @@ fn main() {
     print_len(&s);
 
     let word = get_first_word(&s);
+
     println!("{word}");
 }
 
@@ -35,10 +36,10 @@ fn print_len(some_string: &String) {
     println!("Length: {}", some_string.len());
 }
 
-fn get_first_word(s: &String) -> String {
+fn get_first_word(s: &String) -> &str {
     // My solution for a function that gets the first word
     match s.chars().position(|c| c == ' ') {
-        Some(x) => s[..x].to_string(),
-        None => s.clone()
+        Some(x) => &s[..x],
+        None => s
     }
 }
